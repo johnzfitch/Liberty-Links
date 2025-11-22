@@ -57,8 +57,9 @@
   const target = /^[a-z.]*\.?target\.com$/;
   const bing = /^[a-z.]*\.?bing(\.[a-z]{2,3})?(\.[a-z]+)?$/;
 
+  // Comprehensive Amazon tracking parameters based on ClearURLs rules
   const amazonParams =
-    /&?_?(encoding|ref|th|url|pf_rd_[^&#]*?|pd_rd_[^&#]*?|bbn|rw_html_to_wsrp|ref_|content-id)(=[^&#]*)?($|&)/g;
+    /&?_?(encoding|ref|th|url|pf_rd_[^&#]*?|pd_rd_[^&#]*?|bbn|rw_html_to_wsrp|ref_?|content-id|qid|srs?|__mk_[a-z]{1,3}_[a-z]{1,3}|spIA|ms3_c|[a-z%0-9]*ie|refRID|colii?d|qualifier|smid|field-lbr_brands_browse-bin|sprefix|crid|keywords|cv_ct_[a-z]+|linkCode|creativeASIN|ascsubtag|aaxitk|hsa_cr_id|sb-ci-[a-z]+|rnid|dchild|camp|creative|dib|dib_tag|social_share|starsLeft|skipTwisterOG|tag)(=[^&#]*)?($|&)/gi;
   const neweggParams = /&(cm_sp|icid|ignorebbr)(=[^&#]*)?($|&)/g;
   const imdbParams = /&(pf_rd_[a-z]|ref_)(=[^&#]*)?($|&)/g;
   const bingParams =
