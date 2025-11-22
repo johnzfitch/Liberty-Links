@@ -1,0 +1,342 @@
+{
+  "providers": {
+    "amazon": {
+      "urlPattern": "^https?:\\/\\/(?:[a-z0-9-]+\\.)*?amazon(?:\\.[a-z]{2,}){1,}",
+      "rules": [
+        "pf_rd_[a-z]*",
+        "pd_rd_[a-z]*",
+        "ref_?",
+        "encoding",
+        "th",
+        "url",
+        "bbn",
+        "rw_html_to_wsrp",
+        "content-id"
+      ],
+      "rawRules": ["\\/ref=[^/?]*"],
+      "exceptions": [
+        "^https?:\\/\\/(?:[a-z0-9-]+\\.)*?amazon(?:\\.[a-z]{2,}){1,}\\/(?:gp\\/(?:cart|buy|css|legacy|your-account)|sspa)",
+        "^https?:\\/\\/(?:[a-z0-9-]+\\.)*?amazon(?:\\.[a-z]{2,}){1,}\\/message-us\\?"
+      ]
+    },
+    "ebay": {
+      "urlPattern": "^https?:\\/\\/(?:[a-z0-9-]+\\.)*?ebay(?:\\.[a-z]{2,}){1,}",
+      "rules": [
+        "_sacat",
+        "_odkw",
+        "_from",
+        "_trksid",
+        "rt"
+      ],
+      "rawRules": ["\\/_o?sacat", "\\/_odkw", "\\/_from", "\\/_trksid"]
+    },
+    "google": {
+      "forceRedirection": true,
+      "urlPattern": "^https?:\\/\\/(?:[a-z0-9-]+\\.)*?google(?:\\.[a-z]{2,}){1,}",
+      "rules": [
+        "uact",
+        "iflsig",
+        "sxsrf",
+        "ved",
+        "source",
+        "sourceid",
+        "sei",
+        "tab",
+        "tbo",
+        "hl",
+        "num",
+        "ie",
+        "aqs",
+        "as_qdr",
+        "bav",
+        "biw",
+        "bih",
+        "bs",
+        "bvm",
+        "cad",
+        "channel",
+        "complete",
+        "cp",
+        "client",
+        "dpr",
+        "dcr",
+        "ech",
+        "emsg",
+        "es_sm",
+        "gfe_rd",
+        "gws_rd",
+        "gpsrc",
+        "noj",
+        "btnG",
+        "oeq",
+        "psi",
+        "pbx",
+        "pf",
+        "pq",
+        "rct",
+        "rlz",
+        "site",
+        "spell",
+        "tbas",
+        "usg",
+        "xhr",
+        "gs_l"
+      ],
+      "exceptions": [
+        "^https?:\\/\\/mail\\.google\\.com\\/mail\\/u\\/",
+        "^https?:\\/\\/accounts\\.google\\.com",
+        "^https?:\\/\\/support\\.google\\.com",
+        "^https?:\\/\\/(?:docs|drive)\\.google",
+        "^https?:\\/\\/calendar\\.google",
+        "^https?:\\/\\/takeout\\.google",
+        "^https?:\\/\\/apis\\.google"
+      ],
+      "redirections": [
+        "^https?:\\/\\/(?:[a-z0-9-]+\\.)*?google(?:\\.[a-z]{2,}){1,}\\/url\\?.*?(?:url|q)=(https?[^&]+)",
+        "^https?:\\/\\/(?:[a-z0-9-]+\\.)*?google(?:\\.[a-z]{2,}){1,}\\/.*?adurl=([^&]+)"
+      ]
+    },
+    "bing": {
+      "urlPattern": "^https?:\\/\\/(?:[a-z0-9-]+\\.)*?bing(?:\\.[a-z]{2,}){1,}",
+      "rules": [
+        "redig",
+        "toWww",
+        "ghpl",
+        "lq",
+        "ghc",
+        "ghsh",
+        "ghacc",
+        "go",
+        "qs",
+        "form",
+        "FORM",
+        "filt",
+        "pq",
+        "sc",
+        "sk",
+        "sp",
+        "qpvt",
+        "cvid"
+      ]
+    },
+    "youtube": {
+      "urlPattern": "^https?:\\/\\/(?:[a-z0-9-]+\\.)*?(youtube\\.com|youtu\\.be)",
+      "rules": [
+        "feature",
+        "src_vid",
+        "annotation_id",
+        "gl",
+        "hl"
+      ],
+      "redirections": [
+        "^https?:\\/\\/(?:[a-z0-9-]+\\.)*?youtube\\.com\\/redirect\\?.*?q=([^&]*)"
+      ]
+    },
+    "newegg": {
+      "urlPattern": "^https?:\\/\\/(?:[a-z0-9-]+\\.)*?newegg\\.(?:com|ca)",
+      "rules": [
+        "cm_sp",
+        "icid",
+        "ignorebbr"
+      ]
+    },
+    "imdb": {
+      "urlPattern": "^https?:\\/\\/(?:[a-z0-9-]+\\.)*?imdb\\.com",
+      "rules": [
+        "pf_rd_[a-z]*",
+        "ref_"
+      ]
+    },
+    "facebook": {
+      "urlPattern": "^https?:\\/\\/(?:[a-z0-9-]+\\.)*?facebook\\.com",
+      "rules": [
+        "set",
+        "hc_[a-z_%\\[\\]0-9]*",
+        "ref[a-z]*",
+        "__tn__",
+        "eid",
+        "__(?:xts|cft)__(?:\\[|%5B)\\d(?:\\]|%5D)",
+        "comment_tracking",
+        "dti",
+        "app",
+        "video_source",
+        "ftentidentifier",
+        "pageid",
+        "padding"
+      ],
+      "exceptions": [
+        "^https?:\\/\\/(?:[a-z0-9-]+\\.)*?facebook\\.com\\/(?:plugins|ajax|should_add_browser)\\/",
+        "^https?:\\/\\/(?:[a-z0-9-]+\\.)*?facebook\\.com\\/dialog\\/(?:share|send)"
+      ],
+      "redirections": [
+        "^https?:\\/\\/l[a-z]?\\.facebook\\.com\\/l\\.php\\?.*?u=(https?%3A%2F%2F[^&]*)"
+      ]
+    },
+    "twitter": {
+      "urlPattern": "^https?:\\/\\/(?:[a-z0-9-]+\\.)*?twitter\\.com",
+      "rules": [
+        "src",
+        "ref_src",
+        "ref_url",
+        "vertical",
+        "s"
+      ]
+    },
+    "x": {
+      "urlPattern": "^https?:\\/\\/(?:[a-z0-9-]+\\.)*?x\\.com",
+      "rules": [
+        "src",
+        "ref_src",
+        "ref_url",
+        "vertical",
+        "s"
+      ]
+    },
+    "instagram": {
+      "urlPattern": "^https?:\\/\\/(?:[a-z0-9-]+\\.)*?instagram\\.com",
+      "rules": [
+        "igshid",
+        "igsh"
+      ]
+    },
+    "tiktok": {
+      "urlPattern": "^https?:\\/\\/(?:[a-z0-9-]+\\.)*?tiktok\\.com",
+      "rules": [
+        "u_code",
+        "preview_pb",
+        "_d",
+        "_t",
+        "_r",
+        "timestamp",
+        "user_id",
+        "share_app_name",
+        "share_iid",
+        "source"
+      ]
+    },
+    "reddit": {
+      "urlPattern": "^https?:\\/\\/(?:[a-z0-9-]+\\.)*?reddit\\.com",
+      "rules": [
+        "correlation_id",
+        "ref_campaign",
+        "ref_source",
+        "rdt",
+        "_branch_match_id",
+        "share_id"
+      ],
+      "redirections": [
+        "^https?:\\/\\/out\\.reddit\\.com\\/.*?url=([^&]*)",
+        "^https?:\\/\\/click\\.redditmail\\.com\\/.*?url=([^&]*)"
+      ]
+    },
+    "linkedin": {
+      "urlPattern": "^https?:\\/\\/(?:[a-z0-9-]+\\.)*?linkedin\\.com",
+      "rules": [
+        "refId",
+        "trk",
+        "li[a-z]{2}",
+        "trackingId",
+        "eBP",
+        "flagship3_search_srp_jobs",
+        "lipi",
+        "lici"
+      ]
+    },
+    "etsy": {
+      "urlPattern": "^https?:\\/\\/(?:[a-z0-9-]+\\.)*?etsy\\.com",
+      "rules": [
+        "click_key",
+        "click_sum",
+        "ref",
+        "pro",
+        "frs",
+        "ga_order",
+        "ga_search_type",
+        "ga_view_type",
+        "ga_search_query",
+        "sts",
+        "organic_search_click",
+        "plkey"
+      ]
+    },
+    "yahoo": {
+      "urlPattern": "^https?:\\/\\/(?:[a-z0-9-]+\\.)*?yahoo\\.com",
+      "rules": [
+        "guccounter",
+        "guce_referrer",
+        "guce_referrer_sig"
+      ]
+    },
+    "target": {
+      "urlPattern": "^https?:\\/\\/(?:[a-z0-9-]+\\.)*?target\\.com",
+      "rules": [
+        "lnk",
+        "tref",
+        "searchTermRaw"
+      ]
+    },
+    "disqus": {
+      "urlPattern": "^https?:\\/\\/disqus\\.com",
+      "rules": []
+    },
+    "pocket": {
+      "urlPattern": "^https?:\\/\\/(?:app\\.)?getpocket\\.com",
+      "redirections": [
+        "^https?:\\/\\/getpocket\\.com\\/redirect\\?url=([^&]*)"
+      ]
+    },
+    "globalRules": {
+      "urlPattern": ".*",
+      "rules": [
+        "(?:%3F)?utm(?:_[a-z_]*)?",
+        "(?:%3F)?mtm(?:_[a-z_]*)?",
+        "(?:%3F)?ga_[a-z_]+",
+        "(?:%3F)?yclid",
+        "(?:%3F)?fbclid",
+        "(?:%3F)?gclid",
+        "(?:%3F)?msclkid",
+        "(?:%3F)?igshid",
+        "(?:%3F)?_hsmi",
+        "(?:%3F)?_hsenc",
+        "(?:%3F)?rb_clickid",
+        "(?:%3F)?sc_channel",
+        "(?:%3F)?gclsrc",
+        "(?:%3F)?gpromocode",
+        "(?:%3F)?gqt",
+        "(?:%3F)?dclid",
+        "(?:%3F)?gbraid",
+        "(?:%3F)?wbraid",
+        "(?:%3F)?gad_source",
+        "(?:%3F)?gad_campaignid",
+        "(?:%3F)?srsltid",
+        "(?:%3F)?twclid",
+        "(?:%3F)?_ga",
+        "(?:%3F)?_gl",
+        "(?:%3F)?gdfms",
+        "(?:%3F)?gdftrk",
+        "(?:%3F)?gdffi",
+        "(?:%3F)?_ke",
+        "(?:%3F)?_kx",
+        "(?:%3F)?_branch_match_id",
+        "(?:%3F)?mkwid",
+        "(?:%3F)?pcrid",
+        "(?:%3F)?ef_id",
+        "(?:%3F)?s_kwcid",
+        "(?:%3F)?dm_i",
+        "(?:%3F)?epik",
+        "(?:%3F)?ttclid",
+        "(?:%3F)?ndclid",
+        "(?:%3F)?sccid",
+        "(?:%3F)?rtid",
+        "(?:%3F)?irclickid",
+        "(?:%3F)?vmcid",
+        "(?:%3F)?campid",
+        "(?:%3F)?toolid",
+        "(?:%3F)?customid",
+        "(?:%3F)?mkevt",
+        "(?:%3F)?mkcid",
+        "(?:%3F)?mkrid"
+      ]
+    }
+  }
+}
