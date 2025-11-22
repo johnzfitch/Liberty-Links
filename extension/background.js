@@ -229,17 +229,6 @@ chrome.webNavigation.onBeforeNavigate.addListener((details) => {
 /**
  * Handle committed navigations (for address bar update)
  */
-chrome.webNavigation.onCommitted.addListener((details) => {
-  if (details.frameId !== 0) return;
-
-  const { url: cleanedUrl, cleaned } = cleanUrl(details.url);
-
-  if (cleaned && cleanedUrl !== details.url) {
-    // Update the URL in history without reloading
-    chrome.tabs.update(details.tabId, { url: cleanedUrl });
-  }
-});
-
 /**
  * Message handler for content script and popup
  */
