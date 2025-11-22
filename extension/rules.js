@@ -81,7 +81,7 @@ export const providers = {
       "[a-z%0-9]*ie",
       "refRID",
       "colii?d",
-      "[^a-z%0-9]adId",
+      "adId",
       "qualifier",
       "_encoding",
       "smid",
