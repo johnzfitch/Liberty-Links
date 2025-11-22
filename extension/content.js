@@ -121,18 +121,6 @@
   /**
    * Clean a single link element (synchronous fallback using cache)
    */
-  async function cleanLink(element) {
-    if (!element || !element.href) return;
-
-    const url = element.href;
-    if (!url.startsWith('http')) return;
-
-    const cleanedUrl = await cleanUrl(url);
-    if (cleanedUrl !== url) {
-      element.href = cleanedUrl;
-    }
-  }
-
   /**
    * Process all links on the page
    */
